@@ -2,6 +2,7 @@
 {{- $centerLogo := $params.centerLogo }}
 {{ $logo := $params.logo }}
 <header class="nav_header" >
+  <script type="text/javascript" src="//cdn.thisiswaldo.com/static/js/12867.js"></script>
   <nav class="nav">
     {{- if $centerLogo }}
       {{- partialCached "logo" (dict "logo" $logo "class" "nav_hide") }}
