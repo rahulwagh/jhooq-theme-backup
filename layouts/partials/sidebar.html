@@ -19,8 +19,6 @@
     </ul>
     {{ end }}
 
-    <div id="waldo-tag-12903"></div>
-
     {{- $tagsLimit := (default 100 $s.numberOfTagsShown) }}
     {{- range $key, $value := .Site.Taxonomies }}
     {{- if gt $value 0 }}
@@ -39,6 +37,7 @@
         <br>
         <div class="post_tags_toggle button">{{ T (printf "all_%s" (lower $key)) }}</div>
         {{- $tagsInfo := newScratch }}
+        <div id="waldo-tag-12903"></div>
         <div class="post_tags">
           <div class="tags_list">
             {{- range $value.Alphabetical }}
@@ -108,6 +107,9 @@
     {{- end }}
 
     <div id="waldo-tag-12906"></div>
-    <script>const rightBanner=document.getElementById("waldo-tag-12906");const eOffset=rightBanner.offsetTop;window.onscroll=()=>onSticky(rightBanner,eOffset);function onSticky(e,eOffset){if(window.pageYOffset>eOffset){e.classList.add("sticky")}else{e.classList.remove("sticky")}}</script>
+    <!--<script>const rightBanner=document.getElementById("waldo-tag-12906");const
+          eOffset=rightBanner.offsetTop;window.onscroll=()=>onSticky(rightBanner,eOffset);function onSticky(e,
+          eOffset){if(window.pageYOffset>eOffset){e.classList.add("sticky")}else{e.classList.remove("sticky")
+          }}</script>-->
   </section>
 </aside>
