@@ -37,7 +37,8 @@
         <br>
         <div class="post_tags_toggle button">{{ T (printf "all_%s" (lower $key)) }}</div>
         {{- $tagsInfo := newScratch }}
-        <div id="waldo-tag-12903"></div>
+        <!--<div id="waldo-tag-12903"></div>-->
+        {{- partialCached "adplus/sidebar-1.html" . }}
         <div class="post_tags">
           <div class="tags_list">
             {{- range $value.Alphabetical }}
@@ -60,7 +61,8 @@
     {{- end }}
     {{- end }}
 
-    <div id="waldo-tag-12904"></div>
+    <!--<div id="waldo-tag-12904"></div>-->
+    {{- partialCached "adplus/sidebar-2.html" . }}
 
     {{- $posts := where (where .Site.RegularPages "Permalink" "!=" .Permalink) "Type" "in" $s.mainSections }}
 
@@ -74,7 +76,8 @@
       {{- end }}
     </ul>
 
-    <div id="waldo-tag-12905"></div>
+    <!--<div id="waldo-tag-12905"></div>-->
+    {{- partialCached "adplus/sidebar-3.html" . }}
 
     {{- $introDescription := $s.introDescription }}
     {{- with .Params.introDescription }}
@@ -106,10 +109,14 @@
     {{- end }}
     {{- end }}
 
-    <div id="waldo-tag-12906"></div>
+    <!--<div id="waldo-tag-12906"></div>-->
+    {{- partialCached "adplus/sidebar-4.html" . }}
+    <br/>
+    {{- partialCached "adplus/multiplex-sidebar.html" . }}
     <!--<script>const rightBanner=document.getElementById("waldo-tag-12906");const
           eOffset=rightBanner.offsetTop;window.onscroll=()=>onSticky(rightBanner,eOffset);function onSticky(e,
           eOffset){if(window.pageYOffset>eOffset){e.classList.add("sticky")}else{e.classList.remove("sticky")
           }}</script>-->
+    {{- partialCached "adplus/sidebar-5-300x600.html" . }}
   </section>
 </aside>
