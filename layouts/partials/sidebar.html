@@ -37,7 +37,6 @@
         <br>
         <div class="post_tags_toggle button">{{ T (printf "all_%s" (lower $key)) }}</div>
         {{- $tagsInfo := newScratch }}
-        <!--<div id="waldo-tag-12903"></div>-->
         {{- partialCached "adplus/sidebar-1.html" . }}
         <div class="post_tags">
           <div class="tags_list">
@@ -61,7 +60,6 @@
     {{- end }}
     {{- end }}
 
-    <!--<div id="waldo-tag-12904"></div>-->
     {{- partialCached "adplus/sidebar-2.html" . }}
 
     {{- $posts := where (where .Site.RegularPages "Permalink" "!=" .Permalink) "Type" "in" $s.mainSections }}
@@ -76,7 +74,6 @@
       {{- end }}
     </ul>
 
-    <!--<div id="waldo-tag-12905"></div>-->
     {{- partialCached "adplus/sidebar-3.html" . }}
 
     {{- $introDescription := $s.introDescription }}
@@ -109,7 +106,6 @@
     {{- end }}
     {{- end }}
 
-    <!--<div id="waldo-tag-12906"></div>-->
     {{- partialCached "adplus/sidebar-4.html" . }}
     <br/>
     {{- partialCached "adplus/multiplex-sidebar.html" . }}
