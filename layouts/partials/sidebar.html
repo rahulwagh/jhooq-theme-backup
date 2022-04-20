@@ -113,6 +113,14 @@
           eOffset=rightBanner.offsetTop;window.onscroll=()=>onSticky(rightBanner,eOffset);function onSticky(e,
           eOffset){if(window.pageYOffset>eOffset){e.classList.add("sticky")}else{e.classList.remove("sticky")
           }}</script>-->
-    {{- partialCached "adplus/sidebar-5-300x600.html" . }}
+
+    <div class="sticky-toc">
+      <div class="js-toc">
+        {{- partialCached "adplus/sidebar-5-300x600.html" . }}
+      </div>
+    </div>
   </section>
 </aside>
+<script src="{{ "custom-js/sticky-sidebar.js" | absURL }}"></script>
+
+
