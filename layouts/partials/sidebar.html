@@ -121,6 +121,17 @@
     </div>
   </section>
 </aside>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="{{ "custom-js/sticky-sidebar.js" | absURL }}"></script>
+<script type="text/javascript">
+  //initiating jQuery
+  jQuery(function($) {
+    $(document).ready( function() {
+      //enabling stickUp on the '.navbar-wrapper' class
+      $('.sticky-toc').stickUp();
+    });
+  });
+
+</script>
 
 
