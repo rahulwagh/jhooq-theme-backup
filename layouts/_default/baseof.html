@@ -2,7 +2,22 @@
 {{- $p := .Params }}
 {{ $codeBlockConfig := partial "func/getCodeBlockSettings" . }}
 <!DOCTYPE html>
-<html lang="{{ .Lang }}" data-figures="{{ $p.figurePositionShow }}"{{ if .IsPage }} class="page"{{ end }}{{ if .IsHome }} class="home"{{ end }}{{ with $s.enforceLightMode }} data-mode="lit"{{ end }}{{ with $s.enforceDarkMode }} data-mode="dim"{{ end }}>
+<html
+  lang="{{ .Lang }}"
+  data-figures="{{ $p.figurePositionShow }}"
+  {{ if .IsPage }}
+    class="page"
+  {{ end }}
+  {{ if .IsHome }}
+    class="home"
+  {{ end }}
+  {{ with $s.enforceLightMode }}
+    data-mode="lit"
+  {{ end }}
+  {{ with $s.enforceDarkMode }}
+    data-mode="dim"
+  {{ end -}}
+>
   <head>
     {{- partial "head" . }}
     {{ partial "site_schema.html" . }}
@@ -50,7 +65,11 @@
     {{- end }}
     {{ partial "hooks/head-end.html" . }}
   </head>
-  <body data-code="{{ $codeBlockConfig.max }}" data-lines="{{ $codeBlockConfig.lines }}" id="documentTop">
+  <body
+    data-code="{{ $codeBlockConfig.max }}"
+    data-lines="{{ $codeBlockConfig.lines }}"
+    id="documentTop"
+  >
     {{- partial "header" . }}
     <main>
       {{- block "main" . }}{{ end }}
